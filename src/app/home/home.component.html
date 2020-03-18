@@ -1,0 +1,21 @@
+<h1>Hi {{currentUser.firstName}}!</h1>
+
+<h3>All Assigned Tasks of the users:</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tsk of tasks">
+            <td>{{ tsk.name }}</td>
+            <td>{{ tsk.description }}</td>
+            <td>{{ tsk.startDate | date: 'dd MMM yyyy' }}</td>
+            <td>{{ tsk.endDate | date: 'dd MMM yyyy' }}</td>
+        </tr>
+    </tbody>
+</table>
